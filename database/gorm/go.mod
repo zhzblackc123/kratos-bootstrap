@@ -1,12 +1,9 @@
 module github.com/zhzblackc123/kratos-bootstrap/database/gorm
 
 go 1.24.6
-
-replace github.com/zhzblackc123/kratos-bootstrap/api => ../../api
-
 require (
 	github.com/go-kratos/kratos/v2 v2.8.4
-	github.com/zhzblackc123/kratos-bootstrap/api v0.0.27
+	
 	gorm.io/driver/bigquery v1.2.0
 	gorm.io/driver/clickhouse v0.7.0
 	gorm.io/driver/mysql v1.6.0

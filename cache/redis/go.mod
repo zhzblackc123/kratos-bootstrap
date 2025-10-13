@@ -1,8 +1,6 @@
 module github.com/zhzblackc123/kratos-bootstrap/cache/redis
 
 go 1.24.6
-
-
 require (
 	github.com/go-kratos/kratos/v2 v2.8.4
 	github.com/redis/go-redis/extra/redisotel/v9 v9.12.1

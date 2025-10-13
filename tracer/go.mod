@@ -1,8 +1,6 @@
 module github.com/zhzblackc123/kratos-bootstrap/tracer
 
 go 1.24.6
-
-
 require (
 	go.opentelemetry.io/otel v1.38.0
 	go.opentelemetry.io/otel/exporters/otlp/otlptrace v1.38.0

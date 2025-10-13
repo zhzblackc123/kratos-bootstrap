@@ -5,12 +5,11 @@ go 1.24.6
 replace (
 	github.com/armon/go-metrics => github.com/hashicorp/go-metrics v0.4.1
 
-	github.com/zhzblackc123/kratos-bootstrap/api => ../../api
 )
 
 require (
 	github.com/go-kratos/kratos/v2 v2.8.4
-	github.com/zhzblackc123/kratos-bootstrap/api v0.0.27
+	
 )
 
 require (

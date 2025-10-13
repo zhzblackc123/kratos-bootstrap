@@ -1,12 +1,9 @@
 module github.com/zhzblackc123/kratos-bootstrap/remoteconfig/etcd
 
 go 1.24.6
-
-replace github.com/zhzblackc123/kratos-bootstrap/api => ../../api
-
 require (
 	github.com/go-kratos/kratos/v2 v2.8.4
-	github.com/zhzblackc123/kratos-bootstrap/api v0.0.27
+	
 	go.etcd.io/etcd/client/v3 v3.6.4
 	google.golang.org/grpc v1.75.0
 )

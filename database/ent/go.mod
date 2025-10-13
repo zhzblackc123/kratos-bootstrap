@@ -1,9 +1,6 @@
 module github.com/zhzblackc123/kratos-bootstrap/database/ent
 
 go 1.24.6
-
-replace github.com/zhzblackc123/kratos-bootstrap/api => ../../api
-
 require (
 	entgo.io/ent v0.14.5
 	github.com/XSAM/otelsql v0.39.0
@@ -11,7 +8,7 @@ require (
 	github.com/go-sql-driver/mysql v1.9.3
 	github.com/jackc/pgx/v5 v5.7.5
 	github.com/lib/pq v1.10.9
-	github.com/zhzblackc123/kratos-bootstrap/api v0.0.27
+	
 	go.opentelemetry.io/otel v1.38.0
 )
 
