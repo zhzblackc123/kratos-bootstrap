@@ -34,20 +34,20 @@ require (
 	github.com/olekukonko/tablewriter v1.0.9
 	github.com/spf13/cobra v1.10.1
 	github.com/zhzblackc123/kratos-bootstrap/api v0.0.27
-	github.com/zhzblackc123/kratos-bootstrap/logger v0.0.11
+	github.com/zhzblackc123/kratos-bootstrap/logger v0.0.0-00010101000000-000000000000
 	github.com/zhzblackc123/kratos-bootstrap/registry v0.1.0
-	github.com/zhzblackc123/kratos-bootstrap/registry/consul v0.1.1
-	github.com/zhzblackc123/kratos-bootstrap/registry/etcd v0.1.1
-	github.com/zhzblackc123/kratos-bootstrap/registry/eureka v0.1.1
-	github.com/zhzblackc123/kratos-bootstrap/registry/nacos v0.1.1
-	github.com/zhzblackc123/kratos-bootstrap/registry/servicecomb v0.1.1
-	github.com/zhzblackc123/kratos-bootstrap/registry/zookeeper v0.1.1
-	github.com/zhzblackc123/kratos-bootstrap/remoteconfig/apollo v0.1.1
-	github.com/zhzblackc123/kratos-bootstrap/remoteconfig/consul v0.1.1
-	github.com/zhzblackc123/kratos-bootstrap/remoteconfig/etcd v0.1.1
-	github.com/zhzblackc123/kratos-bootstrap/remoteconfig/nacos v0.1.2
-	github.com/zhzblackc123/kratos-bootstrap/remoteconfig/polaris v0.1.1
-	github.com/zhzblackc123/kratos-bootstrap/tracer v0.0.12
+	github.com/zhzblackc123/kratos-bootstrap/registry/consul v0.0.0-00010101000000-000000000000
+	github.com/zhzblackc123/kratos-bootstrap/registry/etcd v0.0.0-00010101000000-000000000000
+	github.com/zhzblackc123/kratos-bootstrap/registry/eureka v0.0.0-00010101000000-000000000000
+	github.com/zhzblackc123/kratos-bootstrap/registry/nacos v0.0.0-00010101000000-000000000000
+	github.com/zhzblackc123/kratos-bootstrap/registry/servicecomb v0.0.0-00010101000000-000000000000
+	github.com/zhzblackc123/kratos-bootstrap/registry/zookeeper v0.0.0-00010101000000-000000000000
+	github.com/zhzblackc123/kratos-bootstrap/remoteconfig/apollo v0.0.0-00010101000000-000000000000
+	github.com/zhzblackc123/kratos-bootstrap/remoteconfig/consul v0.0.0-00010101000000-000000000000
+	github.com/zhzblackc123/kratos-bootstrap/remoteconfig/etcd v0.0.0-00010101000000-000000000000
+	github.com/zhzblackc123/kratos-bootstrap/remoteconfig/nacos v0.0.0-00010101000000-000000000000
+	github.com/zhzblackc123/kratos-bootstrap/remoteconfig/polaris v0.0.0-00010101000000-000000000000
+	github.com/zhzblackc123/kratos-bootstrap/tracer v0.0.0-00010101000000-000000000000
 	github.com/zhzblackc123/kratos-bootstrap/utils v0.1.5
 	golang.org/x/tools v0.36.0
 )
