@@ -6,8 +6,8 @@ import (
 
 	servicecombClient "github.com/go-chassis/sc-client"
 
-	conf "github.com/tx7do/kratos-bootstrap/api/gen/go/conf/v1"
-	r "github.com/tx7do/kratos-bootstrap/registry"
+	conf "github.com/zhzblackc123/kratos-bootstrap/api/gen/go/conf/v1"
+	r "github.com/zhzblackc123/kratos-bootstrap/registry"
 )
 
 func init() {

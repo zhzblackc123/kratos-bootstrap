@@ -1,14 +1,14 @@
-module github.com/tx7do/kratos-bootstrap/database/elasticsearch
+module github.com/zhzblackc123/kratos-bootstrap/database/elasticsearch
 
 go 1.24.6
 
-replace github.com/tx7do/kratos-bootstrap/api => ../../api
+replace github.com/zhzblackc123/kratos-bootstrap/api => ../../api
 
 require (
 	github.com/elastic/go-elasticsearch/v9 v9.1.0
 	github.com/go-kratos/kratos/v2 v2.8.4
 	github.com/stretchr/testify v1.11.1
-	github.com/tx7do/kratos-bootstrap/api v0.0.27
+	github.com/zhzblackc123/kratos-bootstrap/api v0.0.27
 )
 
 require (

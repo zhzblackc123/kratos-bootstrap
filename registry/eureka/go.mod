@@ -1,19 +1,19 @@
-module github.com/tx7do/kratos-bootstrap/registry/eureka
+module github.com/zhzblackc123/kratos-bootstrap/registry/eureka
 
 go 1.24.6
 
 replace (
 	github.com/armon/go-metrics => github.com/hashicorp/go-metrics v0.4.1
 
-	github.com/tx7do/kratos-bootstrap/api => ../../api
-	github.com/tx7do/kratos-bootstrap/registry => ../
+	github.com/zhzblackc123/kratos-bootstrap/api => ../../api
+	github.com/zhzblackc123/kratos-bootstrap/registry => ../
 )
 
 require (
 	github.com/go-kratos/kratos/v2 v2.8.4
 	github.com/stretchr/testify v1.11.1
-	github.com/tx7do/kratos-bootstrap/api v0.0.27
-	github.com/tx7do/kratos-bootstrap/registry v0.1.0
+	github.com/zhzblackc123/kratos-bootstrap/api v0.0.27
+	github.com/zhzblackc123/kratos-bootstrap/registry v0.1.0
 )
 
 require (

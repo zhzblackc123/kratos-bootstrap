@@ -2,7 +2,7 @@ package registry
 
 import (
 	"github.com/go-kratos/kratos/v2/registry"
-	conf "github.com/tx7do/kratos-bootstrap/api/gen/go/conf/v1"
+	conf "github.com/zhzblackc123/kratos-bootstrap/api/gen/go/conf/v1"
 )
 
 type RegistrarCreator func(c *conf.Registry) registry.Registrar

@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package conf;
 
-option go_package = "github.com/tx7do/kratos-bootstrap/api/gen/go/conf/v1;conf";
+option go_package = "github.com/zhzblackc123/kratos-bootstrap/api/gen/go/conf/v1;conf";
 
 import "google/protobuf/duration.proto";
 
@@ -243,6 +243,7 @@ message Data {
 
   optional Redis redis = 10;  // Redis
   optional MongoDB mongodb = 11;  // MongoDB数据库
+  optional MongoDB business_mongodb = 15;  // 业务MongoDB数据库（用于管理BangBangKe应用用户）
   optional ElasticSearch elastic_search = 12;  // ElasticSearch数据库
   optional Cassandra cassandra = 13;  // Cassandra数据库
 

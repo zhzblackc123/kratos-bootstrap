@@ -1,14 +1,14 @@
-module github.com/tx7do/kratos-bootstrap/cache/redis
+module github.com/zhzblackc123/kratos-bootstrap/cache/redis
 
 go 1.24.6
 
-replace github.com/tx7do/kratos-bootstrap/api => ../../api
+replace github.com/zhzblackc123/kratos-bootstrap/api => ../../api
 
 require (
 	github.com/go-kratos/kratos/v2 v2.8.4
 	github.com/redis/go-redis/extra/redisotel/v9 v9.12.1
 	github.com/redis/go-redis/v9 v9.12.1
-	github.com/tx7do/kratos-bootstrap/api v0.0.27
+	github.com/zhzblackc123/kratos-bootstrap/api v0.0.27
 )
 
 require (

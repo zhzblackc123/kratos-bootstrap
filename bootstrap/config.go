@@ -5,8 +5,8 @@ import (
 	fileKratos "github.com/go-kratos/kratos/v2/config/file"
 	"github.com/go-kratos/kratos/v2/log"
 
-	conf "github.com/tx7do/kratos-bootstrap/api/gen/go/conf/v1"
-	"github.com/tx7do/kratos-bootstrap/utils"
+	conf "github.com/zhzblackc123/kratos-bootstrap/api/gen/go/conf/v1"
+	"github.com/zhzblackc123/kratos-bootstrap/utils"
 )
 
 // NewFileConfigSource 创建一个本地文件配置源

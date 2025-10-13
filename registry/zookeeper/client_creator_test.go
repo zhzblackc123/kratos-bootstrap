@@ -2,7 +2,7 @@ package zookeeper
 
 import (
 	"github.com/stretchr/testify/assert"
-	conf "github.com/tx7do/kratos-bootstrap/api/gen/go/conf/v1"
+	conf "github.com/zhzblackc123/kratos-bootstrap/api/gen/go/conf/v1"
 	"testing"
 )
 

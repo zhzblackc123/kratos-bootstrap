@@ -10,7 +10,7 @@ import (
 
 	etcdClient "go.etcd.io/etcd/client/v3"
 
-	conf "github.com/tx7do/kratos-bootstrap/api/gen/go/conf/v1"
+	conf "github.com/zhzblackc123/kratos-bootstrap/api/gen/go/conf/v1"
 )
 
 // getConfigKey 获取合法的配置名

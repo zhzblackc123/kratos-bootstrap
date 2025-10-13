@@ -7,7 +7,7 @@ import (
 	"github.com/go-kratos/kratos/v2/log"
 	"github.com/go-kratos/kratos/v2/registry"
 
-	v1 "github.com/tx7do/kratos-bootstrap/api/gen/go/conf/v1"
+	v1 "github.com/zhzblackc123/kratos-bootstrap/api/gen/go/conf/v1"
 )
 
 func initApp(logger log.Logger, registrar registry.Registrar, _ *v1.Bootstrap) (*kratos.App, func(), error) {

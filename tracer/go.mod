@@ -1,15 +1,15 @@
-module github.com/tx7do/kratos-bootstrap/tracer
+module github.com/zhzblackc123/kratos-bootstrap/tracer
 
 go 1.24.6
 
 replace (
-	github.com/tx7do/kratos-bootstrap/api => ../api
-	github.com/tx7do/kratos-bootstrap/utils => ../utils
+	github.com/zhzblackc123/kratos-bootstrap/api => ../api
+	github.com/zhzblackc123/kratos-bootstrap/utils => ../utils
 )
 
 require (
-	github.com/tx7do/kratos-bootstrap/api v0.0.27
-	github.com/tx7do/kratos-bootstrap/utils v0.1.5
+	github.com/zhzblackc123/kratos-bootstrap/api v0.0.27
+	github.com/zhzblackc123/kratos-bootstrap/utils v0.1.5
 	go.opentelemetry.io/otel v1.38.0
 	go.opentelemetry.io/otel/exporters/otlp/otlptrace v1.38.0
 	go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc v1.38.0

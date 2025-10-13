@@ -1,12 +1,12 @@
-module github.com/tx7do/kratos-bootstrap/registry/servicecomb
+module github.com/zhzblackc123/kratos-bootstrap/registry/servicecomb
 
 go 1.24.6
 
 replace (
 	github.com/armon/go-metrics => github.com/hashicorp/go-metrics v0.4.1
 
-	github.com/tx7do/kratos-bootstrap/api => ../../api
-	github.com/tx7do/kratos-bootstrap/registry => ../
+	github.com/zhzblackc123/kratos-bootstrap/api => ../../api
+	github.com/zhzblackc123/kratos-bootstrap/registry => ../
 )
 
 require (
@@ -15,8 +15,8 @@ require (
 	github.com/go-kratos/kratos/v2 v2.8.4
 	github.com/gofrs/uuid v4.4.0+incompatible
 	github.com/stretchr/testify v1.11.1
-	github.com/tx7do/kratos-bootstrap/api v0.0.27
-	github.com/tx7do/kratos-bootstrap/registry v0.1.0
+	github.com/zhzblackc123/kratos-bootstrap/api v0.0.27
+	github.com/zhzblackc123/kratos-bootstrap/registry v0.1.0
 )
 
 require (

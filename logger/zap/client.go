@@ -9,7 +9,7 @@ import (
 
 	"gopkg.in/natefinch/lumberjack.v2"
 
-	conf "github.com/tx7do/kratos-bootstrap/api/gen/go/conf/v1"
+	conf "github.com/zhzblackc123/kratos-bootstrap/api/gen/go/conf/v1"
 )
 
 // NewLogger 创建一个新的日志记录器 - Zap

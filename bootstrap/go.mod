@@ -1,31 +1,31 @@
-module github.com/tx7do/kratos-bootstrap/bootstrap
+module github.com/zhzblackc123/kratos-bootstrap/bootstrap
 
 go 1.24.6
 
 replace (
 	github.com/armon/go-metrics => github.com/hashicorp/go-metrics v0.4.1
 
-	github.com/tx7do/kratos-bootstrap/api => ../api
-	github.com/tx7do/kratos-bootstrap/logger => ../logger
+	github.com/zhzblackc123/kratos-bootstrap/api => ../api
+	github.com/zhzblackc123/kratos-bootstrap/logger => ../logger
 
-	github.com/tx7do/kratos-bootstrap/registry => ../registry
-	github.com/tx7do/kratos-bootstrap/registry/consul => ../registry/consul
-	github.com/tx7do/kratos-bootstrap/registry/etcd => ../registry/etcd
-	github.com/tx7do/kratos-bootstrap/registry/eureka => ../registry/eureka
-	github.com/tx7do/kratos-bootstrap/registry/kubernetes => ../registry/kubernetes
-	github.com/tx7do/kratos-bootstrap/registry/nacos => ../registry/nacos
-	github.com/tx7do/kratos-bootstrap/registry/polaris => ../registry/polaris
-	github.com/tx7do/kratos-bootstrap/registry/servicecomb => ../registry/servicecomb
-	github.com/tx7do/kratos-bootstrap/registry/zookeeper => ../registry/zookeeper
+	github.com/zhzblackc123/kratos-bootstrap/registry => ../registry
+	github.com/zhzblackc123/kratos-bootstrap/registry/consul => ../registry/consul
+	github.com/zhzblackc123/kratos-bootstrap/registry/etcd => ../registry/etcd
+	github.com/zhzblackc123/kratos-bootstrap/registry/eureka => ../registry/eureka
+	github.com/zhzblackc123/kratos-bootstrap/registry/kubernetes => ../registry/kubernetes
+	github.com/zhzblackc123/kratos-bootstrap/registry/nacos => ../registry/nacos
+	github.com/zhzblackc123/kratos-bootstrap/registry/polaris => ../registry/polaris
+	github.com/zhzblackc123/kratos-bootstrap/registry/servicecomb => ../registry/servicecomb
+	github.com/zhzblackc123/kratos-bootstrap/registry/zookeeper => ../registry/zookeeper
 
-	github.com/tx7do/kratos-bootstrap/remoteconfig/apollo => ../remoteconfig/apollo
-	github.com/tx7do/kratos-bootstrap/remoteconfig/consul => ../remoteconfig/consul
-	github.com/tx7do/kratos-bootstrap/remoteconfig/etcd => ../remoteconfig/etcd
-	github.com/tx7do/kratos-bootstrap/remoteconfig/kubernetes => ../remoteconfig/kubernetes
-	github.com/tx7do/kratos-bootstrap/remoteconfig/nacos => ../remoteconfig/nacos
-	github.com/tx7do/kratos-bootstrap/remoteconfig/polaris => ../remoteconfig/polaris
-	github.com/tx7do/kratos-bootstrap/tracer => ../tracer
-	github.com/tx7do/kratos-bootstrap/utils => ../utils
+	github.com/zhzblackc123/kratos-bootstrap/remoteconfig/apollo => ../remoteconfig/apollo
+	github.com/zhzblackc123/kratos-bootstrap/remoteconfig/consul => ../remoteconfig/consul
+	github.com/zhzblackc123/kratos-bootstrap/remoteconfig/etcd => ../remoteconfig/etcd
+	github.com/zhzblackc123/kratos-bootstrap/remoteconfig/kubernetes => ../remoteconfig/kubernetes
+	github.com/zhzblackc123/kratos-bootstrap/remoteconfig/nacos => ../remoteconfig/nacos
+	github.com/zhzblackc123/kratos-bootstrap/remoteconfig/polaris => ../remoteconfig/polaris
+	github.com/zhzblackc123/kratos-bootstrap/tracer => ../tracer
+	github.com/zhzblackc123/kratos-bootstrap/utils => ../utils
 )
 
 require (
@@ -33,22 +33,22 @@ require (
 	github.com/google/subcommands v1.2.0
 	github.com/olekukonko/tablewriter v1.0.9
 	github.com/spf13/cobra v1.10.1
-	github.com/tx7do/kratos-bootstrap/api v0.0.27
-	github.com/tx7do/kratos-bootstrap/logger v0.0.11
-	github.com/tx7do/kratos-bootstrap/registry v0.1.0
-	github.com/tx7do/kratos-bootstrap/registry/consul v0.1.1
-	github.com/tx7do/kratos-bootstrap/registry/etcd v0.1.1
-	github.com/tx7do/kratos-bootstrap/registry/eureka v0.1.1
-	github.com/tx7do/kratos-bootstrap/registry/nacos v0.1.1
-	github.com/tx7do/kratos-bootstrap/registry/servicecomb v0.1.1
-	github.com/tx7do/kratos-bootstrap/registry/zookeeper v0.1.1
-	github.com/tx7do/kratos-bootstrap/remoteconfig/apollo v0.1.1
-	github.com/tx7do/kratos-bootstrap/remoteconfig/consul v0.1.1
-	github.com/tx7do/kratos-bootstrap/remoteconfig/etcd v0.1.1
-	github.com/tx7do/kratos-bootstrap/remoteconfig/nacos v0.1.2
-	github.com/tx7do/kratos-bootstrap/remoteconfig/polaris v0.1.1
-	github.com/tx7do/kratos-bootstrap/tracer v0.0.12
-	github.com/tx7do/kratos-bootstrap/utils v0.1.5
+	github.com/zhzblackc123/kratos-bootstrap/api v0.0.27
+	github.com/zhzblackc123/kratos-bootstrap/logger v0.0.11
+	github.com/zhzblackc123/kratos-bootstrap/registry v0.1.0
+	github.com/zhzblackc123/kratos-bootstrap/registry/consul v0.1.1
+	github.com/zhzblackc123/kratos-bootstrap/registry/etcd v0.1.1
+	github.com/zhzblackc123/kratos-bootstrap/registry/eureka v0.1.1
+	github.com/zhzblackc123/kratos-bootstrap/registry/nacos v0.1.1
+	github.com/zhzblackc123/kratos-bootstrap/registry/servicecomb v0.1.1
+	github.com/zhzblackc123/kratos-bootstrap/registry/zookeeper v0.1.1
+	github.com/zhzblackc123/kratos-bootstrap/remoteconfig/apollo v0.1.1
+	github.com/zhzblackc123/kratos-bootstrap/remoteconfig/consul v0.1.1
+	github.com/zhzblackc123/kratos-bootstrap/remoteconfig/etcd v0.1.1
+	github.com/zhzblackc123/kratos-bootstrap/remoteconfig/nacos v0.1.2
+	github.com/zhzblackc123/kratos-bootstrap/remoteconfig/polaris v0.1.1
+	github.com/zhzblackc123/kratos-bootstrap/tracer v0.0.12
+	github.com/zhzblackc123/kratos-bootstrap/utils v0.1.5
 	golang.org/x/tools v0.36.0
 )
 

@@ -9,11 +9,11 @@ import (
 	kratosRegistry "github.com/go-kratos/kratos/v2/registry"
 	"github.com/go-kratos/kratos/v2/transport"
 
-	"github.com/tx7do/kratos-bootstrap/logger"
-	"github.com/tx7do/kratos-bootstrap/tracer"
+	"github.com/zhzblackc123/kratos-bootstrap/logger"
+	"github.com/zhzblackc123/kratos-bootstrap/tracer"
 
-	conf "github.com/tx7do/kratos-bootstrap/api/gen/go/conf/v1"
-	"github.com/tx7do/kratos-bootstrap/utils"
+	conf "github.com/zhzblackc123/kratos-bootstrap/api/gen/go/conf/v1"
+	"github.com/zhzblackc123/kratos-bootstrap/utils"
 )
 
 var (

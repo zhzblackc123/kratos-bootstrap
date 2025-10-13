@@ -1,6 +1,6 @@
 package bootstrap
 
-import conf "github.com/tx7do/kratos-bootstrap/api/gen/go/conf/v1"
+import conf "github.com/zhzblackc123/kratos-bootstrap/api/gen/go/conf/v1"
 
 var configList []interface{}
 

@@ -3,7 +3,7 @@ package bootstrap
 import (
 	"flag"
 
-	"github.com/tx7do/kratos-bootstrap/utils"
+	"github.com/zhzblackc123/kratos-bootstrap/utils"
 )
 
 // CommandFlags 命令传参
