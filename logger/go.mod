@@ -5,9 +5,6 @@ go 1.24.6
 replace (
 	github.com/armon/go-metrics => github.com/hashicorp/go-metrics v0.4.1
 	github.com/imdario/mergo => dario.cat/mergo v0.3.16
-
-	github.com/zhzblackc123/kratos-bootstrap/api => ../api
-	github.com/zhzblackc123/kratos-bootstrap/utils => ../utils
 )
 
 require (
@@ -18,8 +15,6 @@ require (
 	github.com/go-kratos/kratos/contrib/log/zap/v2 v2.0.0-20250903025306-5bcf5bbe2743
 	github.com/go-kratos/kratos/v2 v2.8.4
 	github.com/sirupsen/logrus v1.9.3
-	github.com/zhzblackc123/kratos-bootstrap/api v0.0.27
-	github.com/zhzblackc123/kratos-bootstrap/utils v0.1.5
 	go.uber.org/zap v1.27.0
 	gopkg.in/natefinch/lumberjack.v2 v2.2.1
 )

@@ -2,15 +2,11 @@ module github.com/zhzblackc123/kratos-bootstrap/rpc
 
 go 1.24.6
 
-replace github.com/zhzblackc123/kratos-bootstrap/api => ../api
-
 require (
 	buf.build/go/protovalidate v0.14.0
 	github.com/go-kratos/aegis v0.2.0
 	github.com/go-kratos/kratos/v2 v2.8.4
 	github.com/gorilla/handlers v1.5.2
-	github.com/zhzblackc123/kratos-bootstrap/api v0.0.27
-	github.com/zhzblackc123/kratos-bootstrap/utils v0.1.5
 	google.golang.org/grpc v1.75.0
 	google.golang.org/protobuf v1.36.8
 )

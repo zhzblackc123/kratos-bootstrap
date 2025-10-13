@@ -2,12 +2,9 @@ module github.com/zhzblackc123/kratos-bootstrap/oss/minio
 
 go 1.24.6
 
-replace github.com/zhzblackc123/kratos-bootstrap/api => ../../api
-
 require (
 	github.com/go-kratos/kratos/v2 v2.8.4
 	github.com/minio/minio-go/v7 v7.0.95
-	github.com/zhzblackc123/kratos-bootstrap/api v0.0.27
 )
 
 require (
