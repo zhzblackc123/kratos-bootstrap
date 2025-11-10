@@ -22,5 +22,17 @@ message OSS {
     string download_host = 21;  // 下载链接的主机名
   }
 
+  // 腾讯云 COS
+  message TencentCOS {
+    string secret_id = 1;   // 密钥 ID
+    string secret_key = 2;  // 密钥 Key
+    string region = 3;      // 地域
+    string bucket = 4;      // 存储桶名称
+    string app_id = 5;      // 应用 ID
+  }
+
+  string type = 10;  // 存储类型：minio, tencent-cos, aliyun-oss, aws-s3
+
   optional MinIO minio = 1;
+  optional TencentCOS tencent_cos = 2;
 }

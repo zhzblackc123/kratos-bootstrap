@@ -24,7 +24,9 @@ const (
 // 对象存储
 type OSS struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
+	Type          string                 `protobuf:"bytes,10,opt,name=type,proto3" json:"type,omitempty"` // 存储类型：minio, tencent-cos, aliyun-oss, aws-s3
 	Minio         *OSS_MinIO             `protobuf:"bytes,1,opt,name=minio,proto3,oneof" json:"minio,omitempty"`
+	TencentCos    *OSS_TencentCOS        `protobuf:"bytes,2,opt,name=tencent_cos,json=tencentCos,proto3,oneof" json:"tencent_cos,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -59,9 +61,23 @@ func (*OSS) Descriptor() ([]byte, []int) {
 	return file_conf_v1_kratos_conf_oss_proto_rawDescGZIP(), []int{0}
 }
 
+func (x *OSS) GetType() string {
+	if x != nil {
+		return x.Type
+	}
+	return ""
+}
+
 func (x *OSS) GetMinio() *OSS_MinIO {
 	if x != nil {
 		return x.Minio
+	}
+	return nil
+}
+
+func (x *OSS) GetTencentCos() *OSS_TencentCOS {
+	if x != nil {
+		return x.TencentCos
 	}
 	return nil
 }
@@ -167,13 +183,94 @@ func (x *OSS_MinIO) GetDownloadHost() string {
 	return ""
 }
 
+// 腾讯云 COS
+type OSS_TencentCOS struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	SecretId      string                 `protobuf:"bytes,1,opt,name=secret_id,json=secretId,proto3" json:"secret_id,omitempty"`    // 密钥 ID
+	SecretKey     string                 `protobuf:"bytes,2,opt,name=secret_key,json=secretKey,proto3" json:"secret_key,omitempty"` // 密钥 Key
+	Region        string                 `protobuf:"bytes,3,opt,name=region,proto3" json:"region,omitempty"`                        // 地域
+	Bucket        string                 `protobuf:"bytes,4,opt,name=bucket,proto3" json:"bucket,omitempty"`                        // 存储桶名称
+	AppId         string                 `protobuf:"bytes,5,opt,name=app_id,json=appId,proto3" json:"app_id,omitempty"`             // 应用 ID
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *OSS_TencentCOS) Reset() {
+	*x = OSS_TencentCOS{}
+	mi := &file_conf_v1_kratos_conf_oss_proto_msgTypes[2]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *OSS_TencentCOS) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*OSS_TencentCOS) ProtoMessage() {}
+
+func (x *OSS_TencentCOS) ProtoReflect() protoreflect.Message {
+	mi := &file_conf_v1_kratos_conf_oss_proto_msgTypes[2]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use OSS_TencentCOS.ProtoReflect.Descriptor instead.
+func (*OSS_TencentCOS) Descriptor() ([]byte, []int) {
+	return file_conf_v1_kratos_conf_oss_proto_rawDescGZIP(), []int{0, 1}
+}
+
+func (x *OSS_TencentCOS) GetSecretId() string {
+	if x != nil {
+		return x.SecretId
+	}
+	return ""
+}
+
+func (x *OSS_TencentCOS) GetSecretKey() string {
+	if x != nil {
+		return x.SecretKey
+	}
+	return ""
+}
+
+func (x *OSS_TencentCOS) GetRegion() string {
+	if x != nil {
+		return x.Region
+	}
+	return ""
+}
+
+func (x *OSS_TencentCOS) GetBucket() string {
+	if x != nil {
+		return x.Bucket
+	}
+	return ""
+}
+
+func (x *OSS_TencentCOS) GetAppId() string {
+	if x != nil {
+		return x.AppId
+	}
+	return ""
+}
+
 var File_conf_v1_kratos_conf_oss_proto protoreflect.FileDescriptor
 
 const file_conf_v1_kratos_conf_oss_proto_rawDesc = "" +
 	"\n" +
-	"\x1dconf/v1/kratos_conf_oss.proto\x12\x04conf\x1a\x1dconf/v1/kratos_conf_tls.proto\"\xb1\x02\n" +
-	"\x03OSS\x12*\n" +
-	"\x05minio\x18\x01 \x01(\v2\x0f.conf.OSS.MinIOH\x00R\x05minio\x88\x01\x01\x1a\xf3\x01\n" +
+	"\x1dconf/v1/kratos_conf_oss.proto\x12\x04conf\x1a\x1dconf/v1/kratos_conf_tls.proto\"\xa3\x04\n" +
+	"\x03OSS\x12\x12\n" +
+	"\x04type\x18\n" +
+	" \x01(\tR\x04type\x12*\n" +
+	"\x05minio\x18\x01 \x01(\v2\x0f.conf.OSS.MinIOH\x00R\x05minio\x88\x01\x01\x12:\n" +
+	"\vtencent_cos\x18\x02 \x01(\v2\x14.conf.OSS.TencentCOSH\x01R\n" +
+	"tencentCos\x88\x01\x01\x1a\xf3\x01\n" +
 	"\x05MinIO\x12\x1a\n" +
 	"\bendpoint\x18\x01 \x01(\tR\bendpoint\x12\x1d\n" +
 	"\n" +
@@ -186,8 +283,17 @@ const file_conf_v1_kratos_conf_oss_proto_rawDesc = "" +
 	"\x03tls\x18\v \x01(\v2\t.conf.TLSR\x03tls\x12\x1f\n" +
 	"\vupload_host\x18\x14 \x01(\tR\n" +
 	"uploadHost\x12#\n" +
-	"\rdownload_host\x18\x15 \x01(\tR\fdownloadHostB\b\n" +
-	"\x06_minioB\x8b\x01\n" +
+	"\rdownload_host\x18\x15 \x01(\tR\fdownloadHost\x1a\x8f\x01\n" +
+	"\n" +
+	"TencentCOS\x12\x1b\n" +
+	"\tsecret_id\x18\x01 \x01(\tR\bsecretId\x12\x1d\n" +
+	"\n" +
+	"secret_key\x18\x02 \x01(\tR\tsecretKey\x12\x16\n" +
+	"\x06region\x18\x03 \x01(\tR\x06region\x12\x16\n" +
+	"\x06bucket\x18\x04 \x01(\tR\x06bucket\x12\x15\n" +
+	"\x06app_id\x18\x05 \x01(\tR\x05appIdB\b\n" +
+	"\x06_minioB\x0e\n" +
+	"\f_tencent_cosB\x8b\x01\n" +
 	"\bcom.confB\x12KratosConfOssProtoP\x01Z;github.com/zhzblackc123/kratos-bootstrap/api/gen/go/conf/v1\xa2\x02\x03CXX\xaa\x02\x04Conf\xca\x02\x04Conf\xe2\x02\x10Conf\\GPBMetadata\xea\x02\x04Confb\x06proto3"
 
 var (
@@ -202,20 +308,22 @@ func file_conf_v1_kratos_conf_oss_proto_rawDescGZIP() []byte {
 	return file_conf_v1_kratos_conf_oss_proto_rawDescData
 }
 
-var file_conf_v1_kratos_conf_oss_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
+var file_conf_v1_kratos_conf_oss_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
 var file_conf_v1_kratos_conf_oss_proto_goTypes = []any{
-	(*OSS)(nil),       // 0: conf.OSS
-	(*OSS_MinIO)(nil), // 1: conf.OSS.MinIO
-	(*TLS)(nil),       // 2: conf.TLS
+	(*OSS)(nil),            // 0: conf.OSS
+	(*OSS_MinIO)(nil),      // 1: conf.OSS.MinIO
+	(*OSS_TencentCOS)(nil), // 2: conf.OSS.TencentCOS
+	(*TLS)(nil),            // 3: conf.TLS
 }
 var file_conf_v1_kratos_conf_oss_proto_depIdxs = []int32{
 	1, // 0: conf.OSS.minio:type_name -> conf.OSS.MinIO
-	2, // 1: conf.OSS.MinIO.tls:type_name -> conf.TLS
-	2, // [2:2] is the sub-list for method output_type
-	2, // [2:2] is the sub-list for method input_type
-	2, // [2:2] is the sub-list for extension type_name
-	2, // [2:2] is the sub-list for extension extendee
-	0, // [0:2] is the sub-list for field type_name
+	2, // 1: conf.OSS.tencent_cos:type_name -> conf.OSS.TencentCOS
+	3, // 2: conf.OSS.MinIO.tls:type_name -> conf.TLS
+	3, // [3:3] is the sub-list for method output_type
+	3, // [3:3] is the sub-list for method input_type
+	3, // [3:3] is the sub-list for extension type_name
+	3, // [3:3] is the sub-list for extension extendee
+	0, // [0:3] is the sub-list for field type_name
 }
 
 func init() { file_conf_v1_kratos_conf_oss_proto_init() }
@@ -231,7 +339,7 @@ func file_conf_v1_kratos_conf_oss_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_conf_v1_kratos_conf_oss_proto_rawDesc), len(file_conf_v1_kratos_conf_oss_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   2,
+			NumMessages:   3,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
