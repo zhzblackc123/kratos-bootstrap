@@ -24,9 +24,10 @@ const (
 // 对象存储
 type OSS struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Type          string                 `protobuf:"bytes,10,opt,name=type,proto3" json:"type,omitempty"` // 存储类型：minio, tencent-cos, aliyun-oss, aws-s3
+	Type          string                 `protobuf:"bytes,10,opt,name=type,proto3" json:"type,omitempty"` // 存储类型：minio, tencent-cos, aliyun-oss, aws-s3, qiniu
 	Minio         *OSS_MinIO             `protobuf:"bytes,1,opt,name=minio,proto3,oneof" json:"minio,omitempty"`
 	TencentCos    *OSS_TencentCOS        `protobuf:"bytes,2,opt,name=tencent_cos,json=tencentCos,proto3,oneof" json:"tencent_cos,omitempty"`
+	Qiniu         *OSS_Qiniu             `protobuf:"bytes,3,opt,name=qiniu,proto3,oneof" json:"qiniu,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -78,6 +79,13 @@ func (x *OSS) GetMinio() *OSS_MinIO {
 func (x *OSS) GetTencentCos() *OSS_TencentCOS {
 	if x != nil {
 		return x.TencentCos
+	}
+	return nil
+}
+
+func (x *OSS) GetQiniu() *OSS_Qiniu {
+	if x != nil {
+		return x.Qiniu
 	}
 	return nil
 }
@@ -260,17 +268,119 @@ func (x *OSS_TencentCOS) GetAppId() string {
 	return ""
 }
 
+// 七牛云
+type OSS_Qiniu struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	AccessKey     string                 `protobuf:"bytes,1,opt,name=access_key,json=accessKey,proto3" json:"access_key,omitempty"`                // 访问密钥 (AK)
+	SecretKey     string                 `protobuf:"bytes,2,opt,name=secret_key,json=secretKey,proto3" json:"secret_key,omitempty"`                // 密钥 (SK)
+	Bucket        string                 `protobuf:"bytes,3,opt,name=bucket,proto3" json:"bucket,omitempty"`                                       // 存储空间名称
+	Zone          string                 `protobuf:"bytes,4,opt,name=zone,proto3" json:"zone,omitempty"`                                           // 存储区域：ZoneHuadong, ZoneHuabei, ZoneHuanan, ZoneBeimei, ZoneXinjiapo
+	Domain        string                 `protobuf:"bytes,5,opt,name=domain,proto3" json:"domain,omitempty"`                                       // 访问域名（CDN加速域名）
+	UploadHost    string                 `protobuf:"bytes,6,opt,name=upload_host,json=uploadHost,proto3" json:"upload_host,omitempty"`             // 上传地址（如果不配置则根据 zone 自动选择）
+	UseHttps      bool                   `protobuf:"varint,7,opt,name=use_https,json=useHttps,proto3" json:"use_https,omitempty"`                  // 是否使用 HTTPS
+	UseCdnDomains bool                   `protobuf:"varint,8,opt,name=use_cdn_domains,json=useCdnDomains,proto3" json:"use_cdn_domains,omitempty"` // 上传是否使用 CDN 上传加速
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *OSS_Qiniu) Reset() {
+	*x = OSS_Qiniu{}
+	mi := &file_conf_v1_kratos_conf_oss_proto_msgTypes[3]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *OSS_Qiniu) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*OSS_Qiniu) ProtoMessage() {}
+
+func (x *OSS_Qiniu) ProtoReflect() protoreflect.Message {
+	mi := &file_conf_v1_kratos_conf_oss_proto_msgTypes[3]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use OSS_Qiniu.ProtoReflect.Descriptor instead.
+func (*OSS_Qiniu) Descriptor() ([]byte, []int) {
+	return file_conf_v1_kratos_conf_oss_proto_rawDescGZIP(), []int{0, 2}
+}
+
+func (x *OSS_Qiniu) GetAccessKey() string {
+	if x != nil {
+		return x.AccessKey
+	}
+	return ""
+}
+
+func (x *OSS_Qiniu) GetSecretKey() string {
+	if x != nil {
+		return x.SecretKey
+	}
+	return ""
+}
+
+func (x *OSS_Qiniu) GetBucket() string {
+	if x != nil {
+		return x.Bucket
+	}
+	return ""
+}
+
+func (x *OSS_Qiniu) GetZone() string {
+	if x != nil {
+		return x.Zone
+	}
+	return ""
+}
+
+func (x *OSS_Qiniu) GetDomain() string {
+	if x != nil {
+		return x.Domain
+	}
+	return ""
+}
+
+func (x *OSS_Qiniu) GetUploadHost() string {
+	if x != nil {
+		return x.UploadHost
+	}
+	return ""
+}
+
+func (x *OSS_Qiniu) GetUseHttps() bool {
+	if x != nil {
+		return x.UseHttps
+	}
+	return false
+}
+
+func (x *OSS_Qiniu) GetUseCdnDomains() bool {
+	if x != nil {
+		return x.UseCdnDomains
+	}
+	return false
+}
+
 var File_conf_v1_kratos_conf_oss_proto protoreflect.FileDescriptor
 
 const file_conf_v1_kratos_conf_oss_proto_rawDesc = "" +
 	"\n" +
-	"\x1dconf/v1/kratos_conf_oss.proto\x12\x04conf\x1a\x1dconf/v1/kratos_conf_tls.proto\"\xa3\x04\n" +
+	"\x1dconf/v1/kratos_conf_oss.proto\x12\x04conf\x1a\x1dconf/v1/kratos_conf_tls.proto\"\xcb\x06\n" +
 	"\x03OSS\x12\x12\n" +
 	"\x04type\x18\n" +
 	" \x01(\tR\x04type\x12*\n" +
 	"\x05minio\x18\x01 \x01(\v2\x0f.conf.OSS.MinIOH\x00R\x05minio\x88\x01\x01\x12:\n" +
 	"\vtencent_cos\x18\x02 \x01(\v2\x14.conf.OSS.TencentCOSH\x01R\n" +
-	"tencentCos\x88\x01\x01\x1a\xf3\x01\n" +
+	"tencentCos\x88\x01\x01\x12*\n" +
+	"\x05qiniu\x18\x03 \x01(\v2\x0f.conf.OSS.QiniuH\x02R\x05qiniu\x88\x01\x01\x1a\xf3\x01\n" +
 	"\x05MinIO\x12\x1a\n" +
 	"\bendpoint\x18\x01 \x01(\tR\bendpoint\x12\x1d\n" +
 	"\n" +
@@ -291,9 +401,22 @@ const file_conf_v1_kratos_conf_oss_proto_rawDesc = "" +
 	"secret_key\x18\x02 \x01(\tR\tsecretKey\x12\x16\n" +
 	"\x06region\x18\x03 \x01(\tR\x06region\x12\x16\n" +
 	"\x06bucket\x18\x04 \x01(\tR\x06bucket\x12\x15\n" +
-	"\x06app_id\x18\x05 \x01(\tR\x05appIdB\b\n" +
+	"\x06app_id\x18\x05 \x01(\tR\x05appId\x1a\xef\x01\n" +
+	"\x05Qiniu\x12\x1d\n" +
+	"\n" +
+	"access_key\x18\x01 \x01(\tR\taccessKey\x12\x1d\n" +
+	"\n" +
+	"secret_key\x18\x02 \x01(\tR\tsecretKey\x12\x16\n" +
+	"\x06bucket\x18\x03 \x01(\tR\x06bucket\x12\x12\n" +
+	"\x04zone\x18\x04 \x01(\tR\x04zone\x12\x16\n" +
+	"\x06domain\x18\x05 \x01(\tR\x06domain\x12\x1f\n" +
+	"\vupload_host\x18\x06 \x01(\tR\n" +
+	"uploadHost\x12\x1b\n" +
+	"\tuse_https\x18\a \x01(\bR\buseHttps\x12&\n" +
+	"\x0fuse_cdn_domains\x18\b \x01(\bR\ruseCdnDomainsB\b\n" +
 	"\x06_minioB\x0e\n" +
-	"\f_tencent_cosB\x8b\x01\n" +
+	"\f_tencent_cosB\b\n" +
+	"\x06_qiniuB\x8b\x01\n" +
 	"\bcom.confB\x12KratosConfOssProtoP\x01Z;github.com/zhzblackc123/kratos-bootstrap/api/gen/go/conf/v1\xa2\x02\x03CXX\xaa\x02\x04Conf\xca\x02\x04Conf\xe2\x02\x10Conf\\GPBMetadata\xea\x02\x04Confb\x06proto3"
 
 var (
@@ -308,22 +431,24 @@ func file_conf_v1_kratos_conf_oss_proto_rawDescGZIP() []byte {
 	return file_conf_v1_kratos_conf_oss_proto_rawDescData
 }
 
-var file_conf_v1_kratos_conf_oss_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
+var file_conf_v1_kratos_conf_oss_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
 var file_conf_v1_kratos_conf_oss_proto_goTypes = []any{
 	(*OSS)(nil),            // 0: conf.OSS
 	(*OSS_MinIO)(nil),      // 1: conf.OSS.MinIO
 	(*OSS_TencentCOS)(nil), // 2: conf.OSS.TencentCOS
-	(*TLS)(nil),            // 3: conf.TLS
+	(*OSS_Qiniu)(nil),      // 3: conf.OSS.Qiniu
+	(*TLS)(nil),            // 4: conf.TLS
 }
 var file_conf_v1_kratos_conf_oss_proto_depIdxs = []int32{
 	1, // 0: conf.OSS.minio:type_name -> conf.OSS.MinIO
 	2, // 1: conf.OSS.tencent_cos:type_name -> conf.OSS.TencentCOS
-	3, // 2: conf.OSS.MinIO.tls:type_name -> conf.TLS
-	3, // [3:3] is the sub-list for method output_type
-	3, // [3:3] is the sub-list for method input_type
-	3, // [3:3] is the sub-list for extension type_name
-	3, // [3:3] is the sub-list for extension extendee
-	0, // [0:3] is the sub-list for field type_name
+	3, // 2: conf.OSS.qiniu:type_name -> conf.OSS.Qiniu
+	4, // 3: conf.OSS.MinIO.tls:type_name -> conf.TLS
+	4, // [4:4] is the sub-list for method output_type
+	4, // [4:4] is the sub-list for method input_type
+	4, // [4:4] is the sub-list for extension type_name
+	4, // [4:4] is the sub-list for extension extendee
+	0, // [0:4] is the sub-list for field type_name
 }
 
 func init() { file_conf_v1_kratos_conf_oss_proto_init() }
@@ -339,7 +464,7 @@ func file_conf_v1_kratos_conf_oss_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_conf_v1_kratos_conf_oss_proto_rawDesc), len(file_conf_v1_kratos_conf_oss_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   3,
+			NumMessages:   4,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

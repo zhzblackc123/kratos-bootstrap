@@ -31,8 +31,21 @@ message OSS {
     string app_id = 5;      // 应用 ID
   }
 
-  string type = 10;  // 存储类型：minio, tencent-cos, aliyun-oss, aws-s3
+  // 七牛云
+  message Qiniu {
+    string access_key = 1;      // 访问密钥 (AK)
+    string secret_key = 2;      // 密钥 (SK)
+    string bucket = 3;          // 存储空间名称
+    string zone = 4;            // 存储区域：ZoneHuadong, ZoneHuabei, ZoneHuanan, ZoneBeimei, ZoneXinjiapo
+    string domain = 5;          // 访问域名（CDN加速域名）
+    string upload_host = 6;     // 上传地址（如果不配置则根据 zone 自动选择）
+    bool use_https = 7;         // 是否使用 HTTPS
+    bool use_cdn_domains = 8;   // 上传是否使用 CDN 上传加速
+  }
+
+  string type = 10;  // 存储类型：minio, tencent-cos, aliyun-oss, aws-s3, qiniu
 
   optional MinIO minio = 1;
   optional TencentCOS tencent_cos = 2;
+  optional Qiniu qiniu = 3;
 }
